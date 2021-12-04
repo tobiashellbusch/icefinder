@@ -1,0 +1,19 @@
+{
+    "manifest_version": 2,
+    "name": "ICEfinder",
+    "version": "1.0",
+
+    "description": "Finds the type of ICE train and displays it in the results when searching on the DB website",
+
+    "icons": {
+	"48": "icons/icefinder-48.png",
+	"96": "icons/icefinder-96.png"
+    },
+
+    "content_scripts": [
+	{
+	    "matches": ["*://reiseauskunft.bahn.de/*"],
+	    "js": ["icefinder.js"]
+	}
+    ]
+}
