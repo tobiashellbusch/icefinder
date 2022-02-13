@@ -669,7 +669,7 @@ function find_ices() {
     }
 }
 
-const targetNode = document.getElementById('resultsOverview'); // table element containing results
+const targetNode = document.getElementById('content');
 const config = {subtree:true,childList:true,characterData: true};
 const callback = function(mutationsList, observer) {
     observer.disconnect()
