@@ -12,7 +12,7 @@
 
     "content_scripts": [
 	{
-	    "matches": ["*://reiseauskunft.bahn.de/*"],
+	    "matches": ["*://*.bahn.de/buchung/fahrplan/suche*"],
 	    "js": ["icefinder.js"]
 	}
     ]

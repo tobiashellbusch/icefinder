@@ -722,6 +722,22 @@ typedict = {3: 'ICE 4 (13)',
 	    9586: 'ICE 3 Velaro D', 
 	    9596: 'ICE 3 Velaro D'}
 
+function find_ices_new() {
+    var train_spans = document.getElementsByClassName("test-zugnummer-label__text");
+    for (ts_el of train_spans) {
+	let icestring = ts_el.innerText;
+	let icesplit = icestring.split(" ");
+	let zug_nr = icesplit[icesplit.length - 1];
+	console.log("found ice #" + zug_nr + "#");
+
+	let zugtype = typedict[zug_nr];
+	if (!zugtype)
+	    zugtype = "type unknown";
+	ts_el.innerText += " [" + zugtype + "]";
+	ts_el.className += "_edited";
+    }
+}
+
 function find_ices() {
     var alist = document.getElementsByTagName("a");
     for (a_el of alist) {
@@ -760,7 +776,7 @@ const targetNode = document.getElementById('content');
 const config = {subtree:true,childList:true,characterData: true};
 const callback = function(mutationsList, observer) {
     observer.disconnect()
-    find_ices();
+    find_ices_new();
     observer.observe(targetNode, config);
 };
 const observer = new MutationObserver(callback);
