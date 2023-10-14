@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
     "name": "ICEfinder",
-    "version": "1.3",
+    "version": "2.0",
 
     "description": "Finds the type of ICE train and displays it in the results when searching on the DB website",
 
