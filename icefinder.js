@@ -727,6 +727,8 @@ function find_ices_new() {
     for (ts_el of train_spans) {
 	let icestring = ts_el.innerText;
 	let icesplit = icestring.split(" ");
+	if (icesplit[0] != "ICE")
+	    continue;
 	let zug_nr = icesplit[icesplit.length - 1];
 	console.log("found ice #" + zug_nr + "#");
 
